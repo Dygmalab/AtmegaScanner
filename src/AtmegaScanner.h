@@ -133,7 +133,7 @@ bool AtmegaScanner<cols_, rows_>::readKeys() {
         for (uint8_t c = 0; c < cols_ / 2; c++) {
             uint8_t rowPos = i * (cols_ / 2);
             bitWrite(leftHandState.all, rowPos + c, bitRead(cols, c));
-            bitWrite(rightHandState.all, rowPos + ((cols_ / 2 - 1) - c), bitRead(cols, (cols_ / 2) + c));
+            bitWrite(rightHandState.all, rowPos + c, bitRead(cols, (cols_ / 2) + c));
         }
 
        unselectRows();
